@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinova</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app">
+
+<header class="header">
+    <h1>Clinova</h1>
+    <p>AI-powered Pre-Doctor Assessment System</p>
+</header>
+
+<div class="dashboard">
+
+    <!-- Patient Input -->
+    <div class="panel patient-panel">
+        <h2>Patient Input</h2>
+
+        <label>Age</label>
+        <input id="age" type="number" placeholder="Enter age">
+
+        <label>Gender</label>
+        <select id="gender">
+            <option value="">Select</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Other</option>
+        </select>
+
+        <label>Symptoms</label>
+        <textarea id="symptoms" placeholder="Describe symptoms..."></textarea>
+        <button onclick="startVoice()">🎤 Speak</button>
+
+        <label>Duration of symptoms</label>
+        <div class="duration-row">
+            <input id="durationValue" type="number" placeholder="Number">
+            <select id="durationUnit">
+                <option>Hours</option>
+                <option>Days</option>
+                <option>Weeks</option>
+            </select>
+        </div>
+
+        <label>Medical History</label>
+        <textarea id="history" placeholder="Past illnesses, allergies, etc"></textarea>
+
+        <label>Upload Medical Report</label>
+        <input id="report" type="file">
+
+        <button onclick="sendData()">Analyze</button>
+    </div>
+
+    <!-- AI Analysis -->
+    <div class="panel analysis-panel">
+        <h2>AI Analysis</h2>
+        <div id="loader" style="display:none;">Analyzing...</div>
+        <pre id="analysis">Waiting for patient input…</pre>
+    </div>
+
+    <!-- Doctor View -->
+    <div class="panel doctor-panel">
+        <h2>Doctor View</h2>
+        <pre id="output">No report yet</pre>
+
+        <form action="/download" method="POST">
+            <input type="hidden" id="pdfData" name="summary">
+            <button id="pdfBtn" disabled>Download PDF</button>
+        </form>
+    </div>
+
+</div>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
