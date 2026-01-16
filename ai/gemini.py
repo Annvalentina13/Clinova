@@ -2,9 +2,9 @@ import requests
 import json
 import os
 
-API_KEY = os.getenv("AIzaSyAVoX0BQy6CVCxwVkEn4cYsqRMl-6Ywr3U")
+API_KEY = os.getenv("YOUR API_KEY")
 
-URL = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=AIzaSyAVoX0BQy6CVCxwVkEn4cYsqRMl-6Ywr3U"
+URL = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=YOUR API_KEY"
 
 def generate_medical_summary(patient_text):
 

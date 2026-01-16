@@ -11,9 +11,6 @@ env/
 # Environment variables
 .env
 
-# Uploads
-uploads/
-
 # OS files
 .DS_Store
 Thumbs.db
